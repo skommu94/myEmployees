@@ -21,7 +21,7 @@ class App extends Component {
   }
 
   fetchData = () => {
-    fetch("http://localhost:5000/employees")
+    fetch("https://fine-lime-walkingstick-kit.cyclic.app/")
       .then((response) => response.json())
       .then((data) => this.setState({ employees: data }));
   };
