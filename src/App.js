@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import EmployeeCardCollection from "./components/EmployeeCardCollection";
+import db from './db.json'
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      employees: [],
+      employees: db.employees,
       selectedEmployeeId: "",
       editorId: "",
       editorName: "",
@@ -21,9 +22,9 @@ class App extends Component {
   }
 
   fetchData = () => {
-    fetch("https://fine-lime-walkingstick-kit.cyclic.app/")
+   fetch('')
       .then((response) => response.json())
-      .then((data) => this.setState({ employees: data }));
+      .then((data) => this.setState({ employees: data })) 
   };
 
   handleDelete = () => {
